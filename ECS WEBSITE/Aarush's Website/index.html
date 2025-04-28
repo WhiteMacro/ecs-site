@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Oracle - Cloud Innovation</title>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Oracle</a>
+
+        <nav>
+            <a href="#" class="active"> Home</a>
+            <a href="#timeline">History</a>
+            <a href="help/fortune.html" >Fortune500</a>
+        
+        </nav>
+    </header>
+    <section class="home">
+        <div class="home-img">
+            <img src="main.jpg" alt="Oracle Cloud Innovation">
+        </div>
+        <div class="home-content">
+            <h1>Welcome to <span>Oracle</span></h1>
+            <h3>Leading Cloud Innovation</h3>
+            <p>Empowering businesses with cutting-edge cloud solutions and enterprise software. Join us in shaping the future of technology.</p>
+            <div class="social-icons">
+                <a href="https://www.oracle.com/" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://www.instagram.com/oracle/?hl=en" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/company/oracle" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+            <a href="https://www.oracle.com/" class="btn" target="_blank">Explore Oracle</a>
+        </div>
+    </section>
+
+    <section id="timeline" class="timeline-section">
+        <h2 class="section-title">Our Journey</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>1977</h3>
+                    <p>Oracle Corporation was founded by Larry Ellison, Bob Miner, and Ed Oates, initially as Software Development Laboratories.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>1983</h3>
+                    <p>Renamed to Oracle Corporation, becoming the first company to offer a commercial SQL relational database management system.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>1995</h3>
+                    <p>Launched Oracle 7, introducing PL/SQL and distributed database capabilities, revolutionizing enterprise computing.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>2010</h3>
+                    <p>Acquired Sun Microsystems, expanding into hardware and Java technology, strengthening our enterprise solutions.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>2020</h3>
+                    <p>Launched Oracle Cloud Infrastructure (OCI), providing next-generation cloud services with superior performance and security.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Timeline animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.5
+            });
+
+            timelineItems.forEach(item => {
+                observer.observe(item);
+            });
+        });
+    </script>
+</body>
+</html>

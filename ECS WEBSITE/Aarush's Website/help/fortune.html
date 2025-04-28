@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oracle - Fortune 500 Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .fortune-section {
+            padding: 10rem 9% 5rem;
+            min-height: 100vh;
+            background: linear-gradient(135deg, rgba(22, 22, 22, 0.9), rgba(0, 0, 0, 0.95));
+        }
+
+        .fortune-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            padding: 2rem;
+        }
+
+        .fortune-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 255, 136, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .fortune-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 255, 136, 0.2);
+            border-color: var(--primary-color);
+        }
+
+        .fortune-card h3 {
+            color: var(--primary-color);
+            font-size: 2.4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .fortune-card p {
+            color: var(--text-color);
+            font-size: 1.6rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .fortune-card .icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 4rem;
+            margin-bottom: 5rem;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: var(--primary-color);
+        }
+
+        @media (max-width: 768px) {
+            .fortune-container {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../index.html" class="logo">Oracle</a>
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="../index.html#timeline">History</a>
+            <a href="#" class="active">Fortune500</a>
+        </nav>
+    </header>
+
+    <section class="fortune-section">
+        <h2 class="section-title">Fortune 500 Solutions</h2>
+        <div class="fortune-container">
+            <div class="fortune-card">
+                <div class="icon">
+                    <i class="fas fa-cloud"></i>
+                </div>
+                <h3>Cloud Infrastructure</h3>
+                <p>Enterprise-grade cloud solutions that power the world's leading businesses with unmatched performance and security.</p>
+            </div>
+            <div class="fortune-card">
+                <div class="icon">
+                    <i class="fas fa-database"></i>
+                </div>
+                <h3>Database Management</h3>
+                <p>Industry-leading database solutions that handle the most complex data workloads with exceptional reliability.</p>
+            </div>
+            <div class="fortune-card">
+                <div class="icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Security Solutions</h3>
+                <p>Comprehensive security solutions that protect critical business data and ensure regulatory compliance.</p>
+            </div>
+            <div class="fortune-card">
+                <div class="icon">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <h3>AI & Machine Learning</h3>
+                <p>Advanced AI and ML capabilities that drive innovation and efficiency across enterprise operations.</p>
+            </div>
+            <div class="fortune-card">
+                <div class="icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>Analytics & BI</h3>
+                <p>Powerful analytics tools that transform data into actionable insights for better decision-making.</p>
+            </div>
+            <div class="fortune-card">
+                <div class="icon">
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <h3>Enterprise Applications</h3>
+                <p>Comprehensive suite of enterprise applications that streamline business processes and drive growth.</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Add animation to cards
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.fortune-card');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'all 0.5s ease';
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Oracle Website</title>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Oracle</a>
+        <nav>
+            <a href="#" class="active">Home</a>
+            <a href="#timeline">Timeline</a>
+            <a href="help/fortune.html">Fortune500</a>
+        </nav>
+    </header>
+    <section class="home">
+        <div class="home-img">
+            <img src="main.jpg" alt="Oracle Cloud Infrastructure">
+        </div>
+        <div class="home-content">
+            <h1>Hi, It's <span>Oracle</span></h1>
+            <h3 class="typing-text"> <span></span></h3>
+            <p>This website was made by Abdul</p>
+            <div class="social-icons">
+                <a href="https://twitter.com/Oracle" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://www.instagram.com/oracle/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/company/oracle/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://www.youtube.com/oracle" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+            <a href="https://www.oracle.com/" class="btn" target="_blank">Visit Oracle.com</a>
+        </div>
+    </section>
+
+    <section id="timeline" class="timeline-section">
+        <h2 class="section-title">Oracle's History</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>1977</h3>
+                    <p>Oracle Corporation founded by Larry Ellison, Bob Miner, and Ed Oates</p>
+                    <img src="https://www.oracle.com/a/ocom/img/ellison-miner-oates.jpg" alt="Oracle Founders" class="timeline-img">
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>1979</h3>
+                    <p>First commercial SQL database released</p>
+                    <img src="https://www.oracle.com/a/ocom/img/oracle-database-1.jpg" alt="First Oracle Database" class="timeline-img">
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>1986</h3>
+                    <p>Oracle goes public</p>
+                    <img src="https://www.oracle.com/a/ocom/img/oracle-ipo.jpg" alt="Oracle IPO" class="timeline-img">
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>1995</h3>
+                    <p>Oracle 7 released with PL/SQL</p>
+                    <img src="https://www.oracle.com/a/ocom/img/oracle7.jpg" alt="Oracle 7" class="timeline-img">
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>2010</h3>
+                    <p>Acquisition of Sun Microsystems</p>
+                    <img src="https://www.oracle.com/a/ocom/img/sun-acquisition.jpg" alt="Sun Acquisition" class="timeline-img">
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>2020</h3>
+                    <p>Oracle Cloud Infrastructure expansion</p>
+                    <img src="https://www.oracle.com/a/ocom/img/oci-expansion.jpg" alt="OCI Expansion" class="timeline-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="videos-section">
+        <h2 class="section-title">Oracle in Action</h2>
+        <div class="video-container">
+            <div class="video-item">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/QaVjuCGrCVY" title="Oracle CloudWorld Tour London 2025" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <h3>Oracle CloudWorld Tour London 2025</h3>
+            </div>
+            <div class="video-item">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/xC0MTbdfR-I" title="Building the Future of Data with Oracle Database 23ai" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <h3>Building the Future of Data with Oracle Database 23ai</h3>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Add animation to timeline items
+        document.addEventListener('DOMContentLoaded', () => {
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateX(0)';
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            timelineItems.forEach(item => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateX(-20px)';
+                item.style.transition = 'all 0.5s ease';
+                observer.observe(item);
+            });
+        });
+    </script>
+</body>
+</html>

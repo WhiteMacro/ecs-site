@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    width: 100%;
+    min-height: 100vh; /* Changed height to min-height */
+    overflow-x: hidden;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Changed to flex-start to accommodate content */
+    padding-top: 6rem; /* Add padding to avoid overlap with fixed header */
+}
+
+header{
+    margin-top: 0; /* Reset margin-top */
+    position: fixed; /* Keep header at the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 9%;
+    background-color: transparent;
+    filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.3)); /* More subtle shadow */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo{
+    font-size: 3rem;
+    color: #5cb85c; /* Changed to green */
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.logo:hover{
+    transform: scale(1.1);
+}
+
+nav{
+    display: flex;
+}
+
+nav a{
+    font-size: 1.8rem;
+    color: white;
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+nav a:hover,
+nav a.active{
+    color: #5cb85c; /* Changed to green */
+    border-bottom: 3px solid #5cb85c; /* Changed to green */
+}
+
+@media(max-width:995px){
+    nav{
+        position: absolute;
+        display: none;
+        top: 100%; /* Position below the header */
+        right: 0;
+        width: 40%;
+        border-left: 3px solid #5cb85c; /* Changed to green */
+        border-bottom: 3px solid #5cb85c; /* Changed to green */
+        border-bottom-left-radius: 2rem;
+        padding: 1rem 2rem; /* Adjusted padding */
+        background-color: #161616;
+        border-top: 0.1rem solid rgba(0,0,0,0.1);
+        flex-direction: column; /* Stack links on smaller screens */
+        align-items: flex-start; /* Align links to the left */
+    }
+
+    nav.active{
+        display: block;
+    }
+
+    nav a{
+        display: block;
+        font-size: 2rem;
+        margin: 1.5rem 0; /* Adjusted margin */
+    }
+
+    nav a:hover,
+    nav a.active{
+        padding: 0.8rem 1.5rem; /* Adjusted padding */
+        border-radius: 0.5rem;
+        border-bottom: 0.5rem solid #5cb85c; /* Changed to green */
+    }
+}
+
+.website-links{
+    padding: 5rem 9% 5rem; /* Use the section padding */
+    text-align: center;
+    margin-bottom: 4rem;
+    width: 100%; /* Make the section full width */
+    max-width: 1200px; /* Limit maximum width */
+}
+
+.website-links h2{
+    font-size: 3rem;
+    color: white;
+    margin-bottom: 3rem;
+    font-weight: 700;
+}
+
+.links-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Slightly wider min width */
+    gap: 2.5rem;
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto; /* Center the links container */
+}
+
+.links-container a {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+    color: white;
+    font-size: 1.8rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Color for Abdul's website */
+.links-container a[href*="Abdul's website"] {
+    border: 2px solid #b74b4b;
+}
+
+.links-container a[href*="Abdul's website"]:hover {
+    background: #b74b4b;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(183, 75, 75, 0.3);
+}
+
+/* Color for Aarush's website */
+.links-container a[href*="Aarush's Website"] {
+    border: 2px solid #4b7cb7;
+}
+
+.links-container a[href*="Aarush's Website"]:hover {
+    background: #4b7cb7;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(75, 124, 183, 0.3);
+}
+
+/* Color for Mohhamad's website */
+.links-container a[href*="Mohhamad's Website"] {
+    border: 2px solid #ff7b00;
+}
+
+.links-container a[href*="Mohhamad's Website"]:hover {
+    background: #ff7b00;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(255, 123, 0, 0.3);
+}
+
+/* Color for Ayaan's website */
+.links-container a[href*="Ayaan's Website"] {
+    border: 2px solid #5cb85c;
+}
+
+.links-container a[href*="Ayaan's Website"]:hover {
+    background: #5cb85c;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(92, 184, 92, 0.3);
+}
+
+.links-container a i {
+    font-size: 2.4rem;
+    transition: 0.3s ease;
+}
+
+.links-container a:hover i {
+    transform: scale(1.2);
+}
+
+footer{
+    width: 100%;
+    padding: 2rem 9%;
+    background-color: #161616;
+    color: #ccc;
+    text-align: center;
+    font-size: 1.6rem;
+    border-top: 2px solid #333;
+    margin-top: auto; /* Push footer to the bottom */
+}
+
+.credits{
+    color: #888;
+}
+
+/* Basic responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    header{
+        padding: 1rem 5%;
+    }
+
+    .logo{
+        font-size: 2.5rem;
+    }
+
+    nav a{
+        font-size: 1.6rem;
+        margin-left: 2rem;
+    }
+
+    .website-links h2{
+        font-size: 2.4rem;
+    }
+
+    .links-container{
+        grid-template-columns: 1fr; /* Stack links on smaller screens */
+        width: 95%;
+    }
+
+    .links-container a{
+        font-size: 1.8rem;
+        padding: 1.5rem;
+    }
+
+    .links-container a i{
+        font-size: 2rem;
+        margin-right: 1rem;
+    }
+
+    footer{
+        font-size: 1.4rem;
+        padding: 1.5rem 5%;
+    }
+}
